@@ -1,0 +1,259 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    background: #0e0e0e;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background: #0e0e0e;
+}
+
+svg {
+    width: 0;
+    height: 0;
+}
+
+.text {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+}
+
+.text h2 {
+    filter: url(#fire);
+    position: relative;
+    color: #ffec3b;
+    font-weight: 600;
+    font-size: 15em;
+    -webkit-box-reflect: below -150px linear-gradient(transparent, #0008);
+    text-shadow: 0 0 10px #ff8c3b,
+                 0 0 40px #ff8c3b,
+                 0 0 160px #ff8c3b,
+                 0 0 240px #ff8c3b;
+}
+
+#relationship {
+	font-size: 10em;
+	-webkit-box-reflect: below -80px linear-gradient(transparent, #0008);
+}
+
+
+.description {
+    place-items: center;
+    width: 36ch;
+    color: #fff;
+    text-shadow: 0 0 10px #ff8c3b;
+    font-size: 1.25em;
+    animation: typing 3s steps(35), blink .5s step-end infinite
+    alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+}
+
+#jsp {
+	width: 30ch;
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink{
+    50%{
+        border-color: transparent;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+.inputBox {
+    position: relative;
+    width: 300px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: #0e0e0e;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #ff8c3b;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.70em;
+    padding: 0 10px;
+    background: #0e0e0e;
+    border-left: 1px solid #ff8c3b;
+    border-right: 1px solid #ff8c3b;
+    letter-spacing: 0.2em;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    background: #ff8c3b;
+    color: #0e0e0e;
+    border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 1px solid #ff8c3b;
+} 
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #ff8c3b;
+    margin: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #fff;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, #0002);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.container a span {
+    position:relative;
+    z-index: 100;
+}
+.container a:hover {
+    transition-delay: 1.5s;
+    color:#0e0e0e;
+    box-shadow: 0 0 20px #ff8c3b,
+                0 0 40px #ff8c3b,
+                0 0 60px #ff8c3b,
+                0 0 80px #ff8c3b,
+                0 0 160px #ff8c3b;
+}
+
+
+.container a::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #ff8c3b;
+    box-shadow: 5px -8px 0 #ff8c3b,
+                5px -8px 0 #ff8c3b;
+    transition: width 0.5s, left 0.5s, height 0.5s,
+    box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.container a:hover::before {
+    width: 60%;
+    height: 100%;
+    left: -2px;
+    box-shadow: 5px 0 0 #ff8c3b,
+                5px 0 0 #ff8c3b;
+    transition-delay: 0s, 0s, 0.5s, 1s;
+}
+
+.container a::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #ff8c3b;
+    box-shadow: -5px -8px 0 #ff8c3b,
+                -5px -8px 0 #ff8c3b;
+    transition: width 0.5s, right 0.5s, height 0.5s,
+    box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.container a:hover::after {
+    width: 60%;
+    height: 100%;
+    right: -2px;
+    box-shadow: -5px 0 0 #ff8c3b,
+                -5px 0 0 #ff8c3b;
+    transition-delay: 0s, 0s, 0.5s, 1s;
+}
+
+.button {
+	border-color: #ff8c3b;
+    border-radius: 5px;
+	font-weight: 700;
+	background-color: #0e0e0e;
+	color: #ff8c3b;
+	transition: 0.5s;
+	padding: 10px 20px;
+	-webkit-box-reflect: below 5px linear-gradient(transparent, #0002);
+}
+
+.button:hover {
+	border-color: #ff8c3b;
+    border-radius: 5px;
+	font-weight: 700;
+	background-color: #ff8c3b;
+	color: #000;
+	transition: 0.5s;
+	padding: 10px 20px;
+	box-shadow: 0 0 2px #ff8c3b,
+                0 0 7px #ff8c3b,
+                0 0 12px #ff8c3b,
+                0 0 18px #ff8c3b,
+                0 0 37px #ff8c3b;
+	-webkit-box-reflect: below 5px linear-gradient(transparent, #0002);
+}
